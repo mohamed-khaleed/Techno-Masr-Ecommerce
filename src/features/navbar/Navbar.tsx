@@ -186,6 +186,15 @@ function Navbar() {
           </svg>
         </div>
       </div>
+      <div className="flex items-center justify-center px-[12.5rem] py-3 bg-white text-lightBlack border-b-[1px] border-lightGrey">
+        <ul className="flex gap-10">
+          <li>الرئيسية</li>
+          <li>المنتجات</li>
+          <li>العروض</li>
+          <li>عن الشركة</li>
+          <li>التواصل</li>
+        </ul>
+      </div>
     </nav>
   );
 }

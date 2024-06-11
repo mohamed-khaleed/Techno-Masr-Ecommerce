@@ -1,10 +1,13 @@
-const Products: React.FC = () =>  {
-  return (
-    <div>
-       products
-    </div>
-  )
-}
+import ProductsHeader from "../features/products/ProductsHeader";
+import ProductsBody from "../features/products/ProductsBody.tsx";
 
-export default Products
- 
+const Products: React.FC = () => {
+  return (
+    <section className="container mx-auto px-4 py-10">
+      <ProductsHeader />
+      <ProductsBody />
+    </section>
+  );
+};
+
+export default Products;

@@ -1,8 +1,12 @@
+import DetailsBody from "../features/productDetails/DetailsBody"
+import DetailsHeader from "../features/productDetails/DetailsHeader"
+
 const ProductDetails: React.FC = () => {
   return (
-    <div>
-      productDetails
-    </div>
+    <section className="container mx-auto px-4 py-10">
+      <DetailsHeader/>
+      <DetailsBody/>
+    </section>
   )
 }
 

@@ -7,6 +7,7 @@ import ProductDetails from "../pages/ProductDetails";
 import Products from "../pages/Products";
 import ShoppingCart from "../pages/ShoppingCart";
 import Navbar from "../features/navbar/Navbar";
+import Footer from "../ui/Footer";
 
 const AppRoutes: React.FC = () => (
   <>
@@ -18,8 +19,10 @@ const AppRoutes: React.FC = () => (
         <Route path="/products/:productId" element={<ProductDetails />} />
         <Route path="/products" element={<Products />} />
         <Route path="/cart" element={<ShoppingCart />} />
+        <Route path="*" element={<h1>not found</h1>}/>
       </Routes>
     </Router>
+    <Footer/>
   </>
 );
 
