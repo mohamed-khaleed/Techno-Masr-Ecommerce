@@ -1,6 +1,18 @@
+import { useNavigate } from "react-router-dom";
 import logo from "../../assets/images/Logo.svg";
 
 function Navbar() {
+  const navigate = useNavigate();
+  const handleLoginClick = () => {
+    navigate(`/login`);
+  };
+  const handleCartClick = () => {
+    navigate(`/cart`);
+  };
+  const handleHomeClick = () => {
+    navigate(`/`);
+  };
+
   return (
     <nav className="bg-mainColor text-white">
       <div className="flex items-center justify-between border-b-[1px] border-white px-[9rem] py-[0.75rem]">
@@ -118,34 +130,36 @@ function Navbar() {
         </div>
       </div>
       <div className="flex items-center justify-between px-[11rem] py-[1.25rem]  ">
-        <img src={logo} className="h-[3.125rem] w-[14.813rem]" alt="logo" />
+        <img src={logo} className="h-[3.125rem] w-[14.813rem] cursor-pointer" alt="logo" onClick={handleHomeClick} />
         <input
           type="text"
-          placeholder="بحث"
+          placeholder="search for products"
           className="w-[40rem] px-[1.25rem] py-3"
         />
         <div className="flex gap-4">
-          <svg
-            width="32"
-            height="32"
-            viewBox="0 0 32 32"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M16 20C20.4183 20 24 16.4183 24 12C24 7.58172 20.4183 4 16 4C11.5817 4 8 7.58172 8 12C8 16.4183 11.5817 20 16 20Z"
-              stroke="white"
-              strokeWidth="2"
-              strokeMiterlimit="10"
-            />
-            <path
-              d="M3.875 26.9999C5.10367 24.8713 6.87104 23.1037 8.99944 21.8747C11.1278 20.6458 13.5423 19.9988 16 19.9988C18.4577 19.9988 20.8722 20.6458 23.0006 21.8747C25.129 23.1037 26.8963 24.8713 28.125 26.9999"
-              stroke="white"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
+          <div onClick={handleLoginClick} className="cursor-pointer">
+            <svg
+              width="32"
+              height="32"
+              viewBox="0 0 32 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16 20C20.4183 20 24 16.4183 24 12C24 7.58172 20.4183 4 16 4C11.5817 4 8 7.58172 8 12C8 16.4183 11.5817 20 16 20Z"
+                stroke="white"
+                strokeWidth="2"
+                strokeMiterlimit="10"
+              />
+              <path
+                d="M3.875 26.9999C5.10367 24.8713 6.87104 23.1037 8.99944 21.8747C11.1278 20.6458 13.5423 19.9988 16 19.9988C18.4577 19.9988 20.8722 20.6458 23.0006 21.8747C25.129 23.1037 26.8963 24.8713 28.125 26.9999"
+                stroke="white"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </div>
           <svg
             width="32"
             height="32"
@@ -161,38 +175,40 @@ function Navbar() {
               strokeLinejoin="round"
             />
           </svg>
-          <svg
-            width="32"
-            height="32"
-            viewBox="0 0 32 32"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M10 29C11.1046 29 12 28.1046 12 27C12 25.8954 11.1046 25 10 25C8.89543 25 8 25.8954 8 27C8 28.1046 8.89543 29 10 29Z"
-              fill="white"
-            />
-            <path
-              d="M23 29C24.1046 29 25 28.1046 25 27C25 25.8954 24.1046 25 23 25C21.8954 25 21 25.8954 21 27C21 28.1046 21.8954 29 23 29Z"
-              fill="white"
-            />
-            <path
-              d="M5.2875 9H27.7125L24.4125 20.55C24.2948 20.9692 24.0426 21.3381 23.6948 21.6001C23.3471 21.862 22.9229 22.0025 22.4875 22H10.5125C10.0771 22.0025 9.65293 21.862 9.30515 21.6001C8.95738 21.3381 8.70524 20.9692 8.5875 20.55L4.0625 4.725C4.0027 4.51594 3.8764 4.33207 3.70271 4.20125C3.52903 4.07042 3.31744 3.99977 3.1 4H1"
-              stroke="white"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
+          <div onClick={handleCartClick} className="cursor-pointer">
+            <svg
+              width="32"
+              height="32"
+              viewBox="0 0 32 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M10 29C11.1046 29 12 28.1046 12 27C12 25.8954 11.1046 25 10 25C8.89543 25 8 25.8954 8 27C8 28.1046 8.89543 29 10 29Z"
+                fill="white"
+              />
+              <path
+                d="M23 29C24.1046 29 25 28.1046 25 27C25 25.8954 24.1046 25 23 25C21.8954 25 21 25.8954 21 27C21 28.1046 21.8954 29 23 29Z"
+                fill="white"
+              />
+              <path
+                d="M5.2875 9H27.7125L24.4125 20.55C24.2948 20.9692 24.0426 21.3381 23.6948 21.6001C23.3471 21.862 22.9229 22.0025 22.4875 22H10.5125C10.0771 22.0025 9.65293 21.862 9.30515 21.6001C8.95738 21.3381 8.70524 20.9692 8.5875 20.55L4.0625 4.725C4.0027 4.51594 3.8764 4.33207 3.70271 4.20125C3.52903 4.07042 3.31744 3.99977 3.1 4H1"
+                stroke="white"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </div>
         </div>
       </div>
-      <div className="flex items-center justify-center px-[12.5rem] py-3 bg-white text-lightBlack border-b-[1px] border-lightGrey">
+      <div className="flex items-center justify-center border-b-[1px] border-lightGrey bg-white px-[12.5rem] py-3 text-lightBlack">
         <ul className="flex gap-10">
-          <li>الرئيسية</li>
-          <li>المنتجات</li>
-          <li>العروض</li>
-          <li>عن الشركة</li>
-          <li>التواصل</li>
+          <li>main</li>
+          <li>products</li>
+          <li>offers</li>
+          <li>about us</li>
+          <li>contact us</li>
         </ul>
       </div>
     </nav>

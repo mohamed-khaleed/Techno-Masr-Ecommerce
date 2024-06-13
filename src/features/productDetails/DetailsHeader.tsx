@@ -1,6 +1,9 @@
+import { useProductStore } from "../../stores/productStore";
+
 function DetailsHeader() {
+  const { singleProduct } = useProductStore();
   return (
-    <header>
+    <header className="ml-16">
         <ul className="flex gap-2 items-center text-[#8B96A5]">
         <li>Home</li>
         <svg
@@ -16,7 +19,7 @@ function DetailsHeader() {
             fill="#8B96A5"
           />
         </svg>
-        <li>Products</li>
+        <li>shop now</li>
         <svg
           width="20"
           height="20"
@@ -30,7 +33,7 @@ function DetailsHeader() {
             fill="#8B96A5"
           />
         </svg>
-        <li>Services</li>
+        <li>{singleProduct?.category}</li>
         <svg
           width="20"
           height="20"
@@ -44,7 +47,7 @@ function DetailsHeader() {
             fill="#8B96A5"
           />
         </svg>
-        <li className="text-darkBlue">tv</li>
+        <li className="text-darkBlue">{singleProduct?.title}</li>
       </ul>
     </header>
   )
